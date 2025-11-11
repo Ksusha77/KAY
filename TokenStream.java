@@ -114,9 +114,14 @@ public class TokenStream {
 						// '=' by itself is not a valid operator in KAY
 						t.setType("Other");
 					}
+					return t;
 				case '!':
 					// !=
 					nextChar = readChar();
+					if (nextChar == '='){
+						t.setValue(t.getValue() + nextChar);
+						nextChar = readChar();
+					}
 					return t;
 				case '|':
 					// Look for ||
