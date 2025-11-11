@@ -60,7 +60,7 @@ public class TokenStream {
 				// look for <cr>, <lf>, <ff>
 				do {
 					nextChar = readChar();
-				} while (!isEndofFile(nextChar) && !isEof);
+				} while (!isEndOfLine(nextChar) && !isEof);
 
 				skipWhiteSpace();
 
