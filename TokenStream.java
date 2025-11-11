@@ -56,7 +56,7 @@ public class TokenStream {
 			nextChar = readChar();
 			if (nextChar == '/') { // If / is followed by another /
 				// skip rest of line - it's a comment.
-				// TODO TO BE COMPLETED
+				// done - TODO TO BE COMPLETED
 				// look for <cr>, <lf>, <ff>
 				do {
 					nextChar = readChar();
@@ -78,7 +78,7 @@ public class TokenStream {
 			t.setType("Operator");
 			t.setValue(t.getValue() + nextChar);
 			switch (nextChar) {
-			// TODO TO BE COMPLETED WHERE NEEDED
+			// done - TODO TO BE COMPLETED WHERE NEEDED
 				case '<':
 					// <=
 					nextChar = readChar();
@@ -157,7 +157,9 @@ public class TokenStream {
 		// Then check for a separator
 		if (isSeparator(nextChar)) {
 			t.setType("Separator");
-			// TODO TO BE COMPLETED
+			// done - TODO TO BE COMPLETED
+			t.setValue(t.getValue() + nextChar);
+			nextChar = readChar();
 			return t;
 		}
 
@@ -175,9 +177,9 @@ public class TokenStream {
 			} else if (t.getValue().equals("True") || t.getValue().equals("False")) {
 				t.setType("Literal");
 			}
-			if (isEndOfToken(nextChar)) { // If token is valid, returns.
-				return t;
-			}
+
+			 // If token is valid, returns.
+			return t;
 		}
 
 		if (isDigit(nextChar)) { // check for integer literals
@@ -188,9 +190,8 @@ public class TokenStream {
 			}
 			// An Integer-Literal is to be only followed by a space,
 			// an operator, or a separator.
-			if (isEndOfToken(nextChar)) {// If token is valid, returns.
-				return t;
-			} 
+			// If token is valid, returns.
+			return t;
 		}
 
 		t.setType("Other");
