@@ -254,8 +254,8 @@ public class TokenStream {
 	}
 
 	private boolean isSeparator(char c) {
-		// TODO TO BE COMPLETED
-		return false;
+		// done - TODO TO BE COMPLETED
+		return (c == '(' || c == ')' || c == '{' || c == '}' || c == ';' || c == ',');
 	}
 
 	private boolean isOperator(char c) {
