@@ -260,8 +260,8 @@ public class TokenStream {
 
 	private boolean isOperator(char c) {
 		// Checks for characters that start operators
-		// TODO TO BE COMPLETED
-		return false;
+		// done - TODO TO BE COMPLETED
+		return (c == '+' || c == '-' || c == '*' || c == '/' || c == '<' || c == '>' || c == '=' || c == '!' || c == '&' || c == '|' || c == ':');
 	}
 
 	private boolean isLetter(char c) {
